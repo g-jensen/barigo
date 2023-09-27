@@ -1,12 +1,31 @@
 {
  :paths   ["src"]
  :deps    {
-           org.clojure/clojure {:mvn/version "1.11.1"}
-           quil/quil {:mvn/version "3.1.0"}}
+           org.clojure/clojure                     {:mvn/version "1.11.1"}
+           quil/quil                               {:mvn/version "3.1.0"}
+           generateme/fastmath                     {:git/url       "https://github.com/generateme/fastmath.git"
+                                                    :git/sha       "1312d2bf676d449d7c3febf6acd4ab71ef55bc59"
+                                                    :deps/manifest :deps}
+           ; fastmath deps
+           net.jafama/jafama                       {:mvn/version "2.3.2"}
+           org.apache.commons/commons-math3        {:mvn/version "3.6.1"}
+           com.github.haifengl/smile-interpolation {:mvn/version "2.6.0"}
+           com.github.haifengl/smile-core          {:mvn/version "2.6.0"}
+           com.github.haifengl/smile-mkl           {:mvn/version "2.6.0"}
+           org.bytedeco/arpack-ng                  {:mvn/version "3.7.0-1.5.4"}
+           org.bytedeco/arpack-ng-platform         {:mvn/version "3.7.0-1.5.4"}
+           org.bytedeco/openblas                   {:mvn/version "0.3.10-1.5.4"}
+           org.bytedeco/openblas-platform          {:mvn/version "0.3.10-1.5.4"}
+           org.bytedeco/javacpp                    {:mvn/version "1.5.4"}
+
+           de.sciss/jwave                          {:mvn/version "1.0.3"}
+           ca.umontreal.iro.simul/ssj              {:mvn/version "3.3.1"}
+
+           org.clojure/data.int-map                {:mvn/version "1.2.1"}}
  :aliases {
-           :test {:extra-deps {speclj/speclj {:mvn/version "3.4.3"}}
-                  :extra-paths ["spec"]}
-           :spec {:main-opts ["-m" "speclj.main" "-c"]}
+           :test  {:extra-deps  {speclj/speclj {:mvn/version "3.4.3"}}
+                   :extra-paths ["spec"]}
+           :spec  {:main-opts ["-m" "speclj.main" "-c"]}
            :start {:main-opts ["-m" "barigo.main"]}
            }
  }
