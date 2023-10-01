@@ -1,14 +1,13 @@
 (ns barigo.camera-spec
-  (:require [barigo.util :as util]
-            [barigo.world :as w]
-            [barigo.spec-helpers :refer :all]
-            [fastmath.core :as math]
-            [fastmath.vector :as v]
+  (:require ;[barigo.util :as util]
+            ;[barigo.world :as w]
+            ;[barigo.spec-helpers :refer :all]
             [speclj.core :refer :all]
-            [barigo.camera :as sut]))
+            ;[barigo.camera :as sut]
+            ))
 
-(describe "Camera"
-  (context "calculates the normalized forward vector in camera space"
+#_(describe "Camera"
+  #_(context "calculates the normalized forward vector in camera space"
     (it "for a forward (+y) facing camera"
       (let [cam (sut/->cam (v/vec3) w/forward)]
         (should-vec-approx (v/->Vec3 0 1 0)

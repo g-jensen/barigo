@@ -1,13 +1,11 @@
 (ns barigo.util
-  (:require [fastmath.quaternion :as q]
-            [fastmath.vector :as v]))
+  (:require [uncomplicate.neanderthal.native :refer [dv]]))
 
-; 1) just to normalize naming conventions
-; 2) will need to be replaced with ClojureCL wrappers for parallel operations
-;    where appropriate as the engine develops
+(defn vec3 [x y z]
+  (dv x y z))
 
-(defn euler->quat [euler]
-  (q/from-euler euler))
+(defn vec4 [x y z w]
+  (dv x y z w))
 
-(defn quat->euler [quat]
-  (q/to-euler quat))
+(defn target->quat [target]
+  target)

@@ -1,12 +1,11 @@
 (ns barigo.camera
-  (:require [barigo.util :as util]
-            [fastmath.vector :as v]))
+  (:require [barigo.util :as util]))
 
-(defn ->cam [pos rot]
+(defn ->cam [pos target]
   {:pos pos
-   :rot (util/euler->quat rot)})
+   :rot  target})
 
-(defn forward [cam]
+#_(defn forward [cam]
   (let [target  (util/quat->euler (:rot cam))
         forward (v/sub target (:pos cam))
         mag     (v/mag forward)]
